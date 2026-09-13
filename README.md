@@ -272,3 +272,5 @@ The generated MP4 is written to `out/openline-demo.mp4`. Rendered output and gen
 The six-slide judge deck is available at [`openline-deck.html`](./openline-deck.html). Open it directly in a browser or serve the repository locally. Use the arrow keys, Page Up/Page Down, mouse wheel, touch swipe, or the right-side navigation dots to move between slides. The deck is designed to fit desktop, tablet, and mobile viewports without internal scrolling.
 
 The deployed presentation is available at [openlinecall.vercel.app/openline-deck.html](https://openlinecall.vercel.app/openline-deck.html).
+
+For submission portals that require a file upload, download the landscape PDF here: [Openline Judge Deck PDF](https://openlinecall.vercel.app/Openline-Judge-Deck.pdf). It contains the same six slides, one 16:9 slide per page.

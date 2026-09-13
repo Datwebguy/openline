@@ -183,6 +183,15 @@
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
       html { scroll-behavior: auto; }.reveal { opacity: 1; transform: none; }
     }
+    @media print {
+      @page { size: 16in 9in; margin: 0; }
+      html { width: 16in; height: auto; overflow: visible; scroll-snap-type: none; }
+      body { width: 16in; height: auto; overflow: visible; }
+      .slide { width: 16in; height: 9in; min-height: 0; page-break-after: always; break-after: page; }
+      .slide:last-of-type { page-break-after: auto; break-after: auto; }
+      .deck-help { display: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
