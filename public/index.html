@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Openline | Make the call that matters</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a class="logo" href="/">openline</a>
+      <ul class="nav-links" aria-label="Primary navigation">
+        <li><a href="#workspace">Build with Openline</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#safety">Safety</a></li>
+      </ul>
+      <div class="mode-pill" aria-live="polite"><span class="status-dot"></span>Checking live status</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="openline-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+      <h1>Make the call<br><em>that matters.</em></h1>
+      <p>Openline verifies what is actually available by phone, then gives you the evidence to decide what happens next.</p>
+      <div class="ctas">
+        <a href="#workspace" class="btn ghost">See the workspace</a>
+        <a href="#request-form" class="btn solid">Start a request <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="workspace">
+      <div class="container section-grid">
+        <div class="section-copy">
+          <div class="section-label">The Openline workspace</div>
+          <h2>Start with the question, not the answer.</h2>
+          <p class="desc">Describe what needs to be true. Openline prepares a call plan, waits for your approval, then returns evidence you can act on.</p>
+          <div class="flow-note"><span class="arrow">→</span> Your request becomes a call plan you approve before anything happens.</div>
+        </div>
+
+        <div class="card request-card">
+          <form id="request-form">
+            <div class="card-top">
+              <div>
+                <div class="tag">Create a request</div>
+                <h3>What does someone need today?</h3>
+              </div>
+              <div class="step-count">Step 1 of 3</div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="need">Need</label>
+                <select id="need" name="need" required>
+                  <option value="" selected disabled>Select a need</option>
+                  <option value="food-support">Food support</option>
+                  <option disabled>Housing support (coming soon)</option>
+                  <option disabled>Healthcare access (coming soon)</option>
+                  <option disabled>Childcare (coming soon)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                  <option value="" selected disabled>Select a country</option>
+                  <option>Nigeria</option>
+                  <option>Ghana</option>
+                  <option>Kenya</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Canada</option>
+                  <option>India</option>
+                  <option>South Africa</option>
+                  <option>Australia</option>
+                  <option>Other country</option>
+                </select>
+                <input type="hidden" id="city" name="city" value="">
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="timing">When is help needed?</label>
+                <input id="timing" name="timing" type="text" placeholder="e.g. Today, by 5pm" required>
+              </div>
+              <div class="field">
+                <label for="household-size">Household size</label>
+                  <input id="household-size" name="householdSize" type="number" min="1" max="100" step="1" inputmode="numeric" placeholder="e.g. 2" required>
+              </div>
+            </div>
+
+            <div class="field-row single">
+              <div class="field">
+                <label for="language">Language</label>
+                <select id="language" name="language" required>
+                  <option value="" selected disabled>Select a language</option>
+                  <option>English</option>
+                  <option>Spanish</option>
+                  <option>French</option>
+                  <option>Arabic</option>
+                  <option>Portuguese</option>
+                  <option>Hindi</option>
+                  <option>German</option>
+                  <option>Japanese</option>
+                  <option>Vietnamese</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-row single">
+              <div class="field">
+                <label for="accessibility">Accessibility constraint <span>(optional)</span></label>
+                <select id="accessibility" name="accessibility">
+                  <option value="" selected>No additional constraint</option>
+                  <option value="step-free entrance">Step-free access</option>
+                  <option value="accessible restroom">Accessible restroom</option>
+                  <option value="phone intake available">Phone intake available</option>
+                  <option>Language support needed</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="submit" type="submit">Find available options <span aria-hidden="true">→</span></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container workflow-section" id="workflow">
+        <div id="empty-state" class="workflow-empty">
+          <div class="empty-mark" aria-hidden="true">◎</div>
+          <h3>The phone work starts here.</h3>
+          <p>Describe the need and Openline will prepare a safe, inspectable call plan.</p>
+        </div>
+        <section id="plan-panel" class="workflow-panel" aria-live="polite" hidden>
+          <div class="workflow-heading"><div><div class="tag">Review call plan</div><h3>These are the calls Openline wants to make.</h3></div><span class="step-count">Step 2 of 3</span></div>
+          <div id="plan-list" class="plan-list"></div>
+          <div class="workflow-actions"><button class="reset-button" type="button" data-reset>Start over</button><button id="approve-button" class="submit" type="button">Approve these calls <span aria-hidden="true">→</span></button></div>
+        </section>
+        <section id="results-panel" class="workflow-panel results-panel" aria-live="polite" hidden>
+          <div class="workflow-heading"><div><div class="tag">Verified result</div><h3>Evidence before confidence.</h3></div><span class="step-count">Step 3 of 3</span></div>
+          <div id="request-summary" class="request-summary"></div>
+          <div id="results-list" class="results-list"></div>
+          <button class="reset-button" type="button" data-reset>Start another request</button>
+        </section>
+      </div>
+    </section>
+
+    <section class="section how-section" id="how-it-works">
+      <div class="container">
+        <div class="section-label">What happens next</div>
+        <h2>From request to verified answer.</h2>
+        <div class="next-grid">
+          <article class="next-card"><div class="num">01</div><h4>The phone work starts here.</h4><p>Describe the need and Openline prepares a safe, inspectable call plan.</p></article>
+          <article class="next-card"><div class="num">02</div><h4>You approve before it happens.</h4><p>Review exactly what will be asked and confirmed before any call is made.</p></article>
+          <article class="next-card"><div class="num">03</div><h4>Evidence comes back to you.</h4><p>Get a clear record of what is actually available, so you can act with confidence.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section safety-section" id="safety">
+      <div class="container safety-grid">
+        <div><div class="section-label">Safety by design</div><h2>Verify. Do not commit.</h2></div>
+        <p>Openline identifies the AI assistant, asks for current facts, and is instructed not to book, purchase, pay, reserve, or make a commitment. You stay in control of what happens next.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container"><span>Openline prototype</span><span>Evidence before confidence.</span></footer>
+
+  <script src="/countries.js"></script>
+  <script src="/app.js"></script>
+  <script src="/health.js"></script>
+  <script src="/ui-stability.js"></script>
+  <script src="/product-ui.js"></script>
+</body>
+</html>

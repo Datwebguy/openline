@@ -1,0 +1,13 @@
+{
+  "name": "openline",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Simulation-first phone verification workflow for Openline.",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

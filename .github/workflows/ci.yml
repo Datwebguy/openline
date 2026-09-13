@@ -1,0 +1,51 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Node ${{ matrix.node-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          node --check server/index.js
+          node --check server/providers.js
+          node --check server/store.js
+          node --check server/calle-adapter.js
+          node --check public/app.js
+          node --check public/countries.js
+          node --check public/health.js
+          node --check public/product-ui.js
+          node --check public/ui-stability.js
+          node --check api/index.js
+
+      - name: Run tests
+        run: npm test
+
+      - name: Audit dependencies
+        run: npm audit --omit=dev
