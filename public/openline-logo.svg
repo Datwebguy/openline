@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 64" role="img" aria-labelledby="title desc">
+  <title id="title">Openline logo</title>
+  <desc id="desc">A dark rounded signal mark with two eyes and a small smile.</desc>
+  <path fill="#2c2d30" d="M48 5C28 5 12 13 7 27c-5 15 7 29 23 32 7 2 14 1 18 0 6 2 13 2 20 0 16-3 28-17 23-32C86 13 70 5 48 5Z"/>
+  <ellipse cx="34" cy="30" rx="7" ry="3.2" fill="#fff"/>
+  <ellipse cx="62" cy="30" rx="7" ry="3.2" fill="#fff"/>
+  <path d="M39 43c3 2 6 3 9 0M48 43c3 3 6 2 9 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+</svg>

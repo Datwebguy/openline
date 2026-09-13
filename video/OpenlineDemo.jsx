@@ -2,6 +2,7 @@ import React from 'react';
 import {
   AbsoluteFill,
   Audio,
+  Img,
   Sequence,
   interpolate,
   spring,
@@ -40,21 +41,7 @@ const slideUp = (frame, start = 0, distance = 30) => interpolate(frame, [start, 
 const ease = (frame, start, end, from, to) => interpolate(frame, [start, end], [from, to], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
 
 function Mark({ size = 72, dark = true }) {
-  return (
-    <div style={{
-      width: size,
-      height: size * 0.64,
-      borderRadius: size,
-      background: dark ? C.graphite : C.paper,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      gap: size * 0.1,
-      transform: 'rotate(-2deg)',
-    }}>
-      {[0, 1, 2].map((n) => <span key={n} style={{ width: size * 0.11, height: size * 0.11, borderRadius: '50%', background: dark ? C.paper : C.graphite }} />)}
-    </div>
-  );
+  return <Img src={staticFile(dark ? 'openline-logo.svg' : 'openline-logo-white.svg')} style={{ width: size, height: size * 0.67, objectFit: 'contain', transform: 'rotate(-2deg)' }} />;
 }
 
 function BrandBar({ light = false }) {

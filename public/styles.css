@@ -25,7 +25,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 /* Navigation */
 .site-nav { border-bottom: 1px solid var(--line); background: var(--paper); }
 .nav-inner { display: flex; min-height: 64px; align-items: center; justify-content: space-between; gap: 24px; }
-.logo { color: var(--ink); font-size: 17px; font-weight: 700; letter-spacing: -.01em; text-decoration: none; }
+.logo { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-size: 17px; font-weight: 700; letter-spacing: -.01em; text-decoration: none; }
+.logo img { width: 28px; height: 20px; object-fit: contain; }
 .nav-links { display: flex; gap: 28px; list-style: none; margin-right: auto; margin-left: 28px; }
 .nav-links a { color: var(--muted); font-size: 13.5px; text-decoration: none; }
 .nav-links a:hover { color: var(--ink); }
@@ -34,11 +35,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 /* Hero */
 .hero { border-bottom: 1px solid var(--line); padding: 88px 0 80px; text-align: center; }
-.openline-mark { position: relative; width: 54px; height: 36px; margin: 0 auto 28px; border-radius: 48% 52% 44% 56%; background: #2c2d30; transform: rotate(-4deg); }
-.openline-mark::before, .openline-mark::after { content: ''; position: absolute; top: 15px; width: 7px; height: 4px; border-radius: 50%; background: #fff; }
-.openline-mark::before { left: 16px; }.openline-mark::after { right: 16px; }
-.openline-mark span { position: absolute; top: 22px; width: 9px; height: 4px; border-bottom: 1px solid #fff; border-radius: 50%; }
-.openline-mark span:nth-child(1) { left: 13px; }.openline-mark span:nth-child(2) { left: 22px; }.openline-mark span:nth-child(3) { right: 13px; }
+.openline-mark { display: block; width: 82px; height: 55px; margin: 0 auto 28px; object-fit: contain; transform: rotate(-4deg); }
 .hero h1 { max-width: 640px; margin: 0 auto 20px; color: var(--ink); font-size: clamp(40px, 5vw, 46px); font-weight: 600; line-height: 1.12; letter-spacing: -.02em; }
 .hero h1 em { display: inline; font-family: inherit; font-style: normal; }
 .hero p { max-width: 480px; margin: 0 auto 32px; color: var(--muted); font-size: 15.5px; line-height: 1.6; }
