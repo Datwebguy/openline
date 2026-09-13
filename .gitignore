@@ -24,3 +24,9 @@ test-results/
 out/
 video/openline-voiceover.wav
 public/video/
+
+# Local agent and planning documents stay outside the public repository.
+/AGENTS.md
+/CONTRIBUTING.md
+/SECURITY.md
+/docs/
