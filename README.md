@@ -266,3 +266,7 @@ npm run video:render
 ```
 
 The generated MP4 is written to `out/openline-demo.mp4`. Rendered output and generated audio are intentionally ignored by Git; the source composition, narration script, and generation script remain reviewable in `video/`.
+
+## Judge presentation
+
+The six-slide judge deck is available at [`openline-deck.html`](./openline-deck.html). Open it directly in a browser or serve the repository locally. Use the arrow keys, Page Up/Page Down, mouse wheel, touch swipe, or the right-side navigation dots to move between slides. The deck is designed to fit desktop, tablet, and mobile viewports without internal scrolling.
