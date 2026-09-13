@@ -240,3 +240,29 @@ Openline is an active hackathon build. The simulation workflow is the reliable d
 **Openline — evidence before confidence.**
 
 </div>
+
+## Judge demo video
+
+The repository includes a Remotion composition for the 1:50 Openline product demo. It is structured as a capability proof for judges: the opening names the stale-information problem, the middle shows request intake, call-plan review, explicit approval, and evidence states, and the closing reinforces Openline’s safety boundary and product promise.
+
+The composition is intentionally simulation-first. It demonstrates the real product workflow and vocabulary without presenting fabricated live-call output as proof. The rendered cut uses the Openline mint-and-paper visual system, readable motion typography, a narrated explanation, and a final call to action for the deployed product.
+
+To regenerate the narration locally, run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File video/generate-voiceover.ps1
+```
+
+To open the Remotion timeline:
+
+```bash
+npm run video:studio
+```
+
+To render the final 1920×1080 MP4 at exactly 1:50:
+
+```bash
+npm run video:render
+```
+
+The generated MP4 is written to `out/openline-demo.mp4`. Rendered output and generated audio are intentionally ignored by Git; the source composition, narration script, and generation script remain reviewable in `video/`.

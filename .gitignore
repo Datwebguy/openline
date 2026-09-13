@@ -19,3 +19,8 @@ build/
 .nyc_output/
 test-results/
 .env
+
+.vercel
+out/
+video/openline-voiceover.wav
+public/video/
